@@ -1,6 +1,7 @@
 import * as React from "react";
-import { Button, StyleSheet, Text, View } from "react-native";
-import Modal from "react-native-modal";
+import { StyleSheet, Text, View } from "react-native";
+import { Button } from "../components/Button";
+import { Modal } from "../components/Modal";
 
 export default function TabOneScreen() {
   const [isModalVisible, setIsModalVisible] = React.useState(false);
@@ -13,11 +14,15 @@ export default function TabOneScreen() {
       <View style={styles.separator} />
       <Button title="button" onPress={handleModal} />
       <Modal isVisible={isModalVisible}>
-        <View style={{ flex: 1 }}>
-          <Text>Hello!</Text>
-
-          <Button title="Hide modal" onPress={handleModal} />
-        </View>
+        <Modal.Container>
+          <Modal.Header title="LogRocket is fab!" />
+          <Modal.Body>
+            <Text style={styles.text}>Agree to continue with this guide</Text>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button title="I agree" onPress={handleModal} />
+          </Modal.Footer>
+        </Modal.Container>
       </Modal>
     </View>
   );
