@@ -13,12 +13,7 @@ export default function TabOneScreen() {
       <Text style={styles.title}>Tab One</Text>
       <View style={styles.separator} />
       <Button title="button" onPress={handleModal} />
-      <Modal
-        isVisible={isModalVisible}
-        animationInTiming={1000}
-        animationOutTiming={1000}
-        backdropTransitionInTiming={800}
-        backdropTransitionOutTiming={800}>
+      <Modal isVisible={isModalVisible}>
         <Modal.Container>
           <Modal.Header title="LogRocket is fab!" />
           <Modal.Body>
